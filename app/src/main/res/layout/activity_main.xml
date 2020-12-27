@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/idSearch"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/idCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idCardView"
+            app:layout_constraintVertical_bias="0.025">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_margin="3dp"
+                android:src="@drawable/camera"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:text="BROWSE BY"
+            android:textColor="@color/blank"
+            android:textSize="17sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idCardView" />
+
+        <Button
+            android:id="@+id/btnBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="36dp"
+            android:text="Brand"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtBrand" />
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAE0"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBrand">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latest Arrival"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="202dp"
+                android:padding="2dp"
+                android:text="View all" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="#D6D6CC"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear1" />
+
+        <TextView
+            android:id="@+id/txtUploadPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAN'T FIND WHAT YOU\n LOOKING FOR?\n SEARCH BY"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerview1" />
+
+        <Button
+            android:id="@+id/btnPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="44dp"
+            android:text="Upload picture"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUploadPic" />
+
+        <TextView
+            android:id="@+id/txtCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAE0"
+            android:text="Choose by Country"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/btnPic" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0.5dp"
+            android:padding="3dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/constraintLayout"
+            app:layout_constraintRight_toRightOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/txtCountry">
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#EAEAE0"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:alignmentMode="alignBounds"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <ImageView
+                    android:contentDescription="Myanmar"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="1dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_gravity="left|top"
+                    app:srcCompat="@drawable/myanmar" />
+
+                <ImageView
+                    android:contentDescription="Bagan"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_margin="1dp"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="left|top"
+                    app:srcCompat="@drawable/bagan" />
+
+
+                <ImageView
+                    android:contentDescription="Singapore"
+                    android:layout_margin="1dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_gravity="left|top"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/singapore" />
+
+                <ImageView
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:contentDescription="Korea"
+                    android:layout_margin="1dp"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="left|top"
+                    app:srcCompat="@drawable/korea" />
+
+            </GridLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtNeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEED HELP?\nCUSTOMER SERVICE"
+            android:textColor="@color/black"
+            app:layout_constraintRight_toRightOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/cardCountry" />
+
+        <Button
+            android:id="@+id/btnCallNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAlL NOW Ph:"
+            app:layout_constraintRight_toRightOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/txtNeed" />
+
+        <TextView
+            android:id="@+id/idPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular Products"
+            app:layout_constraintLeft_toLeftOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/btnCallNow" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/constraintLayout"
+            app:layout_constraintRight_toRightOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/idPopular" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
